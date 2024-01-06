@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class dhaw : MonoBehaviour
 {
-    public GameObject flashlight_ground, inticon, flashlight_player;
-
+    public GameObject flashlight_ground, inticon, flashlight_player,playerflash;
+    public bool andoudhaw =false;
     private void OnTriggerStay(Collider other)
     {
         // Check if the other collider has the "MainCamera" tag
@@ -22,6 +22,7 @@ public class dhaw : MonoBehaviour
                 if (flashlight_ground != null)
                 {
                     flashlight_ground.SetActive(false);
+                    playerflash.SetActive(true);
                 }
 
                 // Check if inticon is not null before accessing it

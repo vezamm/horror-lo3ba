@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    public GameObject door_closed, door_opened, intText , lockedtext;
+    public GameObject door_closed, door_opened, intText, lockedtext,keyf;
     public AudioSource open, close;
     public bool opened, locked;
-    public static bool keyfound;
+    public bool keymawjouda;
     private void Start()
     {
-        keyfound = false;
+        keymawjouda = false;
     }
     private void OnTriggerStay(Collider other)
     {
@@ -31,10 +31,11 @@ public class Door : MonoBehaviour
                         opened = true;
                     }
                 }
-                if (locked ==true)
+                if (locked == true)
                 {
-                    lockedtext.SetActive(true);               }
-
+                    lockedtext.SetActive(true);
+                }
+                
             }
         }
     }
@@ -56,10 +57,11 @@ public class Door : MonoBehaviour
     }
     private void Update()
     {
-
-        if (keyfound == true)
+        if (keyf.activeSelf)
+        //if (keymawjouda == true)
         {
             locked = false;
         }
     }
+
 }

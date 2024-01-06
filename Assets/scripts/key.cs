@@ -5,28 +5,48 @@ using UnityEngine;
 public class key : MonoBehaviour
 {
     public GameObject inticon, keye;
+    public bool keyfound=false;
+    public GameObject keyf;
 
 
     private void OnTriggerStay(Collider other)
     {
-        if (CompareTag("MainCamera"))
+        // Check if the other collider has the "MainCamera" tag
+        if (other.CompareTag("MainCamera"))
         {
+            // Check if inticon is not null before accessing it
+            if (inticon != null)
+            {
+                inticon.SetActive(true);
+            }
 
-            inticon.SetActive(true);
-            if(Input.GetKeyDown(KeyCode.E))
-            { 
-            
-            keye.SetActive(false);
-                Door.keyfound = true;
-                inticon.SetActive(false);
+            // Check for the "E" key press
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                // Check if key and inticon are not null before accessing them
+                if (keye != null)
+                {
+                    
+                    keye.SetActive(false);
+                    keyfound=true;
+                    keyf.SetActive(true);
+                }
+
+                // Check if inticon is not null before accessing it
+                if (inticon != null)
+                {
+                    inticon.SetActive(false);
+                }     
             }
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
-        if (CompareTag("MainCamera"))
+        // Check if the other collider has the "MainCamera" tag and inticon is not null
+        if (other.CompareTag("MainCamera") && inticon != null)
         {
-            inticon.SetActive(false) ;
+            inticon.SetActive(false);
         }
     }
 }
