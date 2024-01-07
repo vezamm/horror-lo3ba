@@ -25,7 +25,7 @@ public class fogtrigger : MonoBehaviour
     void Start()
     {
         // Initialize the fog to be disabled at the start
-        RenderSettings.fog = false;
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -61,12 +61,14 @@ public class fogtrigger : MonoBehaviour
         float elapsedTime = 0;
         float startDensity = RenderSettings.fogDensity;
         float targetDensity = enableFog ? 0.35f : 0f; // Set target density based on fog enable state
+        
+        if(enableFog)RenderSettings.fog = enableFog;
 
         while (elapsedTime < transitionDuration)
         {
             // Calculate the current fog density based on the elapsed time
             float currentDensity = Mathf.Lerp(startDensity, targetDensity, elapsedTime / transitionDuration);
-
+            Debug.Log("current density:" + currentDensity);
             // Apply the calculated density to the fog settings
             RenderSettings.fogDensity = currentDensity;
 
