@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class key : MonoBehaviour
 {
-    public GameObject inticon, keye;
+    public GameObject inticon, keye , sign1 , sign2;
     public bool keyfound=false;
     public GameObject keyf;
 
@@ -14,6 +14,9 @@ public class key : MonoBehaviour
         // Check if the other collider has the "MainCamera" tag
         if (other.CompareTag("MainCamera"))
         {
+
+            sign1.SetActive(true);
+            sign2.SetActive(true);
             // Check if inticon is not null before accessing it
             if (inticon != null)
             {
@@ -38,6 +41,7 @@ public class key : MonoBehaviour
                     inticon.SetActive(false);
                 }     
             }
+            
         }
     }
 
