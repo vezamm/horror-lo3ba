@@ -7,12 +7,12 @@ public class CodeLock : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private string expectedpasswords;
-    [SerializeField] UnityEvent passwordcorrect;
-    [SerializeField] UnityEvent<string> oncurrentpasswordchange;
+    [SerializeField] UnityEvent<string> oncurrentpasswordchange; 
+    [SerializeField] UnityEvent passwordcorrect; 
     [SerializeField] UnityEvent passwordwrong;
     [SerializeField] UnityEvent ontrigger;
     private string Currentpassword;
-    public GameObject text;
+   // public GameObject text;
     public GameObject canvas;
 
 
@@ -35,9 +35,9 @@ public class CodeLock : MonoBehaviour
         if (Currentpassword == expectedpasswords)
         {             
             passwordcorrect?.Invoke();
-            Cursor.lockState = CursorLockMode.Locked;
-            canvas.SetActive(false);
-            text.SetActive(false);
+            //Cursor.lockState = CursorLockMode.Locked;
+           // canvas.SetActive(false);
+           // text.SetActive(false);
         }
         else if (Currentpassword.Length == expectedpasswords.Length)
         {

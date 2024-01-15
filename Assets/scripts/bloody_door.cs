@@ -45,6 +45,7 @@ public class bloody_door : MonoBehaviour
             intText.SetActive(false);
         }
     }
+    
 
 }
 

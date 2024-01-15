@@ -68,7 +68,7 @@ public class fogtrigger : MonoBehaviour
         {
             // Calculate the current fog density based on the elapsed time
             float currentDensity = Mathf.Lerp(startDensity, targetDensity, elapsedTime / transitionDuration);
-            Debug.Log("current density:" + currentDensity);
+           // Debug.Log("current density:" + currentDensity);
             // Apply the calculated density to the fog settings
             RenderSettings.fogDensity = currentDensity;
 
