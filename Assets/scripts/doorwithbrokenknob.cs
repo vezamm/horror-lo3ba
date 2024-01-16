@@ -15,7 +15,7 @@ public class doorwithbrokenknob : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
@@ -23,8 +23,8 @@ public class doorwithbrokenknob : MonoBehaviour
             {
                 inText.SetActive(true);
                 knob.SetActive(false);
-                Knobhave.Invoke();
                 nob = true;
+                Knobhave.Invoke();
             }
             
 

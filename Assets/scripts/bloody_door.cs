@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class bloody_door : MonoBehaviour
 {
-    private Animator animator;
+    public Animator animator;
     public GameObject intText;
     public bool opened;
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>(); 
+       // animator = GetComponent<Animator>(); 
         opened = animator.GetBool("open");
     }
     private void FixedUpdate() 
@@ -19,7 +19,7 @@ public class bloody_door : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void OnTriggerStay(Collider other)
+   /* private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {  
@@ -34,13 +34,24 @@ public class bloody_door : MonoBehaviour
                 
             }
         }
-    }
+    }*/
 
     public void Open()
     {
-        animator.SetBool("open", true);
+        if (opened == false)
+        {
+            animator.SetBool("open", true);
+            Debug.Log("raycasttodhreb");
+            //opened = false;
+        }
+        if (opened==true)
+        {
+            Debug.Log("kada tekhdem");
+            animator.SetBool("open", false);
+           //opened = true;
+        }
     }
-    public void Close()
+    /*public void Close()
     {
         animator.SetBool("open", false);
     }
@@ -50,8 +61,7 @@ public class bloody_door : MonoBehaviour
         {
             intText.SetActive(false);
         }
-    }
-    
+    }*/
 
 }
 

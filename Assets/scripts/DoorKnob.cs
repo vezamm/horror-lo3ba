@@ -8,7 +8,7 @@ public class DoorKnob : bloody_door
     [SerializeField] private doorwithbrokenknob knob;   
     void Start()
     {
-        knob.Knobhave += Open;
+           knob.Knobhave += Open;
     }
     
    

@@ -17,13 +17,14 @@ public class CodeLock : MonoBehaviour
 
 
     public void EnterpasswordText(string text)
-    {
-        if (Currentpassword.Length < expectedpasswords.Length)
-        {
-            Currentpassword += text;
-            oncurrentpasswordchange?.Invoke(Currentpassword);
-            CheckPassword();
-        }
+    {      
+            if (Currentpassword.Length < expectedpasswords.Length)
+            {
+                Currentpassword += text;
+                oncurrentpasswordchange?.Invoke(Currentpassword);
+                CheckPassword();
+            }
+        
     }
     public void ResetPassword()
     {
@@ -40,23 +41,22 @@ public class CodeLock : MonoBehaviour
            // text.SetActive(false);
         }
         else if (Currentpassword.Length == expectedpasswords.Length)
-        {
-            passwordwrong?.Invoke();
-            //ResetPassword();
-        }
-    }
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            // text.SetActive(true); ;
-             if(Input.GetKeyDown(KeyCode.E))
+        {                       
+            for (int i = 0; i < 4; i++) 
             {
-               canvas.SetActive(true);
-               Cursor.lockState = CursorLockMode.None;
+                ResetPassword();
+                if (i == 3)
+                {                 
+                      passwordwrong?.Invoke();
+                }
             }
-            //ontrigger?.Invoke();
+            
         }
+    }  
+    public void Canvason()
+    {
+        canvas.SetActive(true );
+        Cursor.lockState = CursorLockMode.None;
     }
     private void OnTriggerExit(Collider other)
     {
