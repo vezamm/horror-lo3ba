@@ -28,15 +28,21 @@ public class bloody_door : MonoBehaviour
             {
                 if (opened == false)
                 {
-                    animator.SetBool("open", true);
+                    Open();
                 }
-                else animator.SetBool("open", false);
+                else Close();
                 
             }
         }
-        
-               
+    }
 
+    public void Open()
+    {
+        animator.SetBool("open", true);
+    }
+    public void Close()
+    {
+        animator.SetBool("open", false);
     }
     private void OnTriggerExit(Collider other)
     {

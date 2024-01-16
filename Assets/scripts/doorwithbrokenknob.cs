@@ -7,17 +7,27 @@ public class doorwithbrokenknob : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject knob;
-    public delegate void doorknob(bool haveknob =false);
-    public static event doorknob knobhave;
+    public GameObject inText;
+    public delegate void doorknob();
+    public event doorknob Knobhave;
+    public bool nob=false;
     void Start()
     {
         
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("MainCamera"))
+        if (other.CompareTag("Player"))
         {
-            knob.SetActive(false);
+            if (Input.GetKey(KeyCode.E))
+            {
+                inText.SetActive(true);
+                knob.SetActive(false);
+                Knobhave.Invoke();
+                nob = true;
+            }
+            
+
             //haveknob=true;
         }
     }
