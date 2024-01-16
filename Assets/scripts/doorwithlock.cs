@@ -18,5 +18,9 @@ public class Doorwithlock : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
+    
+    
+
+    
     // Update is called once per frame
 }

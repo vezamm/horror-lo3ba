@@ -13,7 +13,7 @@ public class bloody_door : MonoBehaviour
         animator = GetComponent<Animator>(); 
         opened = animator.GetBool("open");
     }
-    private void Update()
+    private void FixedUpdate() 
     {
         opened = animator.GetBool("open");
     }
