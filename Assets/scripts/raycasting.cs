@@ -5,6 +5,7 @@ using UnityEngine;
 public class Raycasting : MonoBehaviour
 {
     private Camera camera;
+    public GameObject InText;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,20 +17,49 @@ public class Raycasting : MonoBehaviour
     {
         RaycastHit hitinfo;
         var ray = camera.ScreenPointToRay(Input.mousePosition) ;
-        if (Physics.Raycast(ray,out hitinfo, 3))
+        if (Physics.Raycast(ray,out hitinfo, 5))
         {
-            if (hitinfo.collider.CompareTag("Door")&&Input.GetKeyDown(KeyCode.E))
-            {
-                //if (opened = true)
-                bloody_door door = hitinfo.collider.GetComponent<bloody_door>();  
-                door.Open();
-                
+            if (hitinfo.collider.CompareTag("Door"))
+            {   
+                InText.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    //if (opened = true)
+                    bloody_door door = hitinfo.collider.GetComponent<bloody_door>();
+                    door.Open();                    
+                }
+                else InText.SetActive(false);
             }
-            if(hitinfo.collider.CompareTag("codelock")&&Input.GetKeyDown(KeyCode.E))
+            if(hitinfo.collider.CompareTag("codelock"))               
             {
-                CodeLock  aaa= hitinfo.collider.GetComponent<CodeLock>();
-                aaa.Canvason();
+                InText.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    CodeLock padlock = hitinfo.collider.GetComponent<CodeLock>();
+                    padlock.Canvason();
+                }
+                 else InText.SetActive(false);
             }
+            if (hitinfo.collider.CompareTag("flash")) 
+            {   
+                InText.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    dhaw flashi = hitinfo.collider.GetComponent<dhaw>();
+                    flashi.Flashlightofftheground();
+                    
+                }
+                else InText.SetActive(false);
+            }
+            if (hitinfo.collider.CompareTag("key"))
+            {
+                if(Input.GetKeyDown(KeyCode.Mouse0)) 
+                {
+                    CodeLock code = hitinfo.collider.GetComponent<CodeLock>();
+                    //code.EnterpasswordText(Text);
+                }
+            }
+           
         }
     }
 }

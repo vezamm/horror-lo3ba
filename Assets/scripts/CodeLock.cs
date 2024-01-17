@@ -16,11 +16,11 @@ public class CodeLock : MonoBehaviour
     public GameObject canvas;
 
 
-    public void EnterpasswordText(string text)
+    public void EnterpasswordText(string Text)
     {      
             if (Currentpassword.Length < expectedpasswords.Length)
             {
-                Currentpassword += text;
+                Currentpassword += Text;
                 oncurrentpasswordchange?.Invoke(Currentpassword);
                 CheckPassword();
             }

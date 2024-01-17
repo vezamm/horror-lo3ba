@@ -19,8 +19,8 @@ public class fogtrigger : MonoBehaviour
              RenderSettings .fog = false;
          }
      }*/
-    public float transitionDuration = 4.0f; // Duration of the fog transition
-    private bool isFogEnabled = false; // Current fog state
+    public float transitionDuration = 4.0f; 
+    private bool isFogEnabled = false; 
 
     void Start()
     {
@@ -49,10 +49,8 @@ public class fogtrigger : MonoBehaviour
 
     void ToggleFog()
     {
-        // Toggle fog state
         isFogEnabled = !isFogEnabled;
 
-        // Start the coroutine for smooth fog transition
         StartCoroutine(ChangeFogStateSmoothly(isFogEnabled));
     }
 
@@ -60,26 +58,21 @@ public class fogtrigger : MonoBehaviour
     {
         float elapsedTime = 0;
         float startDensity = RenderSettings.fogDensity;
-        float targetDensity = enableFog ? 0.35f : 0f; // Set target density based on fog enable state
-        
+        float targetDensity = enableFog ? 0.2f : 0f; 
         if(enableFog)RenderSettings.fog = enableFog;
 
         while (elapsedTime < transitionDuration)
         {
-            // Calculate the current fog density based on the elapsed time
             float currentDensity = Mathf.Lerp(startDensity, targetDensity, elapsedTime / transitionDuration);
-           // Debug.Log("current density:" + currentDensity);
-            // Apply the calculated density to the fog settings
+           
             RenderSettings.fogDensity = currentDensity;
 
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        // Ensure the final fog density is set correctly
         RenderSettings.fogDensity = targetDensity;
 
-        // Enable or disable fog based on the final state
         RenderSettings.fog = enableFog;
     }
 }

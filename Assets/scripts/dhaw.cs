@@ -4,7 +4,7 @@ public class dhaw : MonoBehaviour
 {
     public GameObject flashlight_ground, inticon, flashlight_player,playerflash;
     public bool andoudhaw =false;
-    private void OnTriggerStay(Collider other)
+   /* private void OnTriggerStay(Collider other)
     {
         // Check if the other collider has the "MainCamera" tag
         if (other.CompareTag("MainCamera"))
@@ -38,14 +38,19 @@ public class dhaw : MonoBehaviour
                 }
             }
         }
+    }*/
+    public void Flashlightofftheground()
+    {
+        playerflash.SetActive(true);    
+        flashlight_ground.SetActive(false);
     }
 
-    private void OnTriggerExit(Collider other)
+   /* private void OnTriggerExit(Collider other)
     {
         // Check if the other collider has the "MainCamera" tag and inticon is not null
         if (other.CompareTag("MainCamera") && inticon != null)
         {
             inticon.SetActive(false);
         }
-    }
+    }*/
 }

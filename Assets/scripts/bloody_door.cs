@@ -5,7 +5,7 @@ using UnityEngine;
 public class bloody_door : MonoBehaviour
 {
     public Animator animator;
-    public GameObject intText;
+    //public GameObject intText;
     public bool opened;
     // Start is called before the first frame update
     void Start()
