@@ -8,7 +8,7 @@ using UnityEngine;
 public class JumpScare : MonoBehaviour
 {
     public AudioSource scream;
-    public GameObject player;
+    public GameObject ThePlayer;
     public GameObject JumpCam;
     public GameObject Flashing;
 
@@ -16,7 +16,7 @@ public class JumpScare : MonoBehaviour
     {
         scream.Play();
         JumpCam.SetActive(true);
-        player.SetActive(false);
+        ThePlayer.SetActive(false);
         Flashing.SetActive(true);
         StartCoroutine(EndJump());
 
@@ -25,8 +25,8 @@ public class JumpScare : MonoBehaviour
     {
 
         yield return new WaitForSeconds(2f);
-        player.SetActive(true);
+        ThePlayer.SetActive(true);
         JumpCam.SetActive(false);
-        Flashing?.SetActive(false);
+        Flashing.SetActive(false);
     }
 }
