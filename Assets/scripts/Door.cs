@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Door : MonoBehaviour
@@ -55,6 +56,7 @@ public class Door : MonoBehaviour
         door_closed.SetActive(true);
         door_opened.SetActive(false);
     }
+    
     private void Update()
     {
         if (keyf.activeSelf)
@@ -62,6 +64,12 @@ public class Door : MonoBehaviour
         {
             locked = false;
         }
+        bool a = GetComponent<key>();
+        if (a != null)
+        {
+          //s  a = keyfound;
+        }
+        
     }
 
 }

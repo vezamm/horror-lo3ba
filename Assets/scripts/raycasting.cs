@@ -51,15 +51,16 @@ public class Raycasting : MonoBehaviour
                 }
                 else InText.SetActive(false);
             }
-            if (hitinfo.collider.CompareTag("key"))
+            if (hitinfo.collider.CompareTag("key1"))
             {
                 if(Input.GetKeyDown(KeyCode.Mouse0)) 
                 {
-                    CodeLock code = hitinfo.collider.GetComponent<CodeLock>();
-                    //code.EnterpasswordText(Text);
+                    entre code = hitinfo.collider.GetComponent<entre>();
+                    
                 }
             }
            
         }
     }
+
 }

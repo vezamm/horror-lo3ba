@@ -8,6 +8,7 @@ TagManager:
   - Door
   - codelock
   - flashlight
+  - key1
   layers:
   - Default
   - TransparentFX
