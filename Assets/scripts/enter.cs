@@ -14,8 +14,8 @@ public class entre : MonoBehaviour
    // public bool keyout;
     private Camera cam;
     public string enteredcode;
-    public string expectedcode;
-    public Animator animdoor;
+    public string expectedcode,expectedcodecolor;
+    public Animator animdoor;public Animator animdoorcolor;
     public TMP_Text display;
 
     // Update is called once per frame
@@ -51,6 +51,20 @@ public class entre : MonoBehaviour
                     }
                 }
             }
+            if (hitinfo.collider.CompareTag("keycolor"))
+            {
+                if (Input.GetKeyDown(KeyCode.Mouse0))
+                {
+                    DoorKnob doorKnob =hitinfo.collider.GetComponent<DoorKnob>();
+                    if(doorKnob != null)
+                    {
+                        doorKnob.Keyin();
+                        Addnumber(doorKnob.numbers);
+                        Checklenghtcodecolor();
+                        
+                    }
+                }
+            }
         } 
 
     }
@@ -83,6 +97,25 @@ public class entre : MonoBehaviour
         {
             display.text = $"{enteredcode:OOOO}";
         }
+    }
+
+    public void Checkcodecolor()
+    {
+        if (enteredcode == expectedcodecolor)
+        {
+            animdoorcolor.SetBool("open", true);
+
+
+        }
+        else enteredcode = "";
+    }
+    public void Checklenghtcodecolor()
+    {
+        if (enteredcode.Length == expectedcodecolor.Length)
+        {
+            Checkcodecolor();
+        }
+
     }
 
 }

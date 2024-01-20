@@ -10,6 +10,7 @@ TagManager:
   - flashlight
   - key1
   - ok
+  - keycolor
   layers:
   - Default
   - TransparentFX

@@ -1374,7 +1374,7 @@ GameObject:
   - component: {fileID: 73330815}
   m_Layer: 0
   m_Name: Cube (3)
-  m_TagString: Untagged
+  m_TagString: keycolor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1429,7 +1429,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numbers: 4
   animator: {fileID: 73330815}
-  animdoor: {fileID: 0}
 --- !u!65 &73330817
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1716,7 +1715,7 @@ GameObject:
   - component: {fileID: 81883173}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: keycolor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1730,8 +1729,8 @@ Transform:
   m_GameObject: {fileID: 81883171}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4577, y: -0.1762, z: -0.581}
-  m_LocalScale: {x: 0.010720788, y: 0.028179457, z: 0.041160505}
+  m_LocalPosition: {x: -0.4577, y: -0.1762, z: -0.584}
+  m_LocalScale: {x: 0.010720788, y: 0.028179457, z: 0.047823988}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1252212749}
@@ -1771,7 +1770,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numbers: 3
   animator: {fileID: 81883173}
-  animdoor: {fileID: 0}
 --- !u!65 &81883175
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4138,7 +4136,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numbers: 3
   animator: {fileID: 202298909}
-  animdoor: {fileID: 0}
 --- !u!1 &203909814
 GameObject:
   m_ObjectHideFlags: 0
@@ -4841,7 +4838,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numbers: 9
   animator: {fileID: 231418971}
-  animdoor: {fileID: 0}
 --- !u!1 &234115220
 GameObject:
   m_ObjectHideFlags: 0
@@ -5511,7 +5507,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numbers: 2
   animator: {fileID: 254045479}
-  animdoor: {fileID: 0}
 --- !u!1 &255477730
 GameObject:
   m_ObjectHideFlags: 0
@@ -10955,7 +10950,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numbers: 0
   animator: {fileID: 563652846}
-  animdoor: {fileID: 0}
 --- !u!1 &564428792
 GameObject:
   m_ObjectHideFlags: 0
@@ -12835,7 +12829,7 @@ GameObject:
   - component: {fileID: 684784857}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: keycolor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12849,8 +12843,8 @@ Transform:
   m_GameObject: {fileID: 684784852}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4731, y: -0.1762, z: -0.579}
-  m_LocalScale: {x: 0.010720788, y: 0.028179457, z: 0.042389285}
+  m_LocalPosition: {x: -0.473, y: -0.1762, z: -0.584}
+  m_LocalScale: {x: 0.010720788, y: 0.028179457, z: 0.047823988}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1252212749}
@@ -12939,7 +12933,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 3a2c5f6a4f2851c4e9bbc93498566ecb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -12961,7 +12955,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numbers: 2
   animator: {fileID: 684784857}
-  animdoor: {fileID: 0}
 --- !u!1 &691358898
 GameObject:
   m_ObjectHideFlags: 0
@@ -13744,7 +13737,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numbers: 1
   animator: {fileID: 714856602}
-  animdoor: {fileID: 0}
 --- !u!1001 &720475246
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16847,7 +16839,7 @@ GameObject:
   - component: {fileID: 921565939}
   m_Layer: 0
   m_Name: Cube (4)
-  m_TagString: Untagged
+  m_TagString: keycolor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16861,8 +16853,8 @@ Transform:
   m_GameObject: {fileID: 921565937}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4577, y: -0.2105, z: -0.5878}
-  m_LocalScale: {x: 0.010720788, y: 0.028179457, z: 0.038746573}
+  m_LocalPosition: {x: -0.4577, y: -0.2105, z: -0.584}
+  m_LocalScale: {x: 0.010720788, y: 0.028179457, z: 0.047823988}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1252212749}
@@ -16902,7 +16894,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numbers: 1
   animator: {fileID: 921565939}
-  animdoor: {fileID: 0}
 --- !u!65 &921565941
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19075,7 +19066,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numbers: 
   animator: {fileID: 1086425683}
-  animdoor: {fileID: 0}
 --- !u!95 &1086425683 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 95000012944575982, guid: 9f4e5dd2165039f4a878d1c1260761df, type: 3}
@@ -19448,7 +19438,7 @@ Transform:
   m_GameObject: {fileID: 1136471365}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.6201657, z: -0, w: 0.7844709}
-  m_LocalPosition: {x: -1.793, y: 2.66, z: -18.988}
+  m_LocalPosition: {x: -1.793, y: 2.66, z: -19.434}
   m_LocalScale: {x: 0.79537, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19559,8 +19549,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enteredcode: 
-  expectedcode: 1234
+  expectedcode: 10213
+  expectedcodecolor: 1234
   animdoor: {fileID: 110601686}
+  animdoorcolor: {fileID: 1673676872}
   display: {fileID: 470165588}
 --- !u!95 &1147265505 stripped
 Animator:
@@ -23604,7 +23596,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numbers: 5
   animator: {fileID: 1378036407}
-  animdoor: {fileID: 0}
 --- !u!1 &1379247055
 GameObject:
   m_ObjectHideFlags: 0
@@ -24573,7 +24564,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numbers: 8
   animator: {fileID: 1428782266}
-  animdoor: {fileID: 0}
 --- !u!1 &1433471307
 GameObject:
   m_ObjectHideFlags: 0
@@ -26389,7 +26379,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numbers: 4
   animator: {fileID: 1557002650}
-  animdoor: {fileID: 0}
 --- !u!1 &1557284262
 GameObject:
   m_ObjectHideFlags: 0
@@ -29665,7 +29654,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numbers: 7
   animator: {fileID: 1748943146}
-  animdoor: {fileID: 0}
 --- !u!1 &1754909085
 GameObject:
   m_ObjectHideFlags: 0
@@ -32103,7 +32091,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numbers: 6
   animator: {fileID: 1869701954}
-  animdoor: {fileID: 0}
 --- !u!1 &1879518766
 GameObject:
   m_ObjectHideFlags: 0
@@ -34196,7 +34183,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numbers: 
   animator: {fileID: 1147265505}
-  animdoor: {fileID: 0}
 --- !u!1001 &2052484995
 PrefabInstance:
   m_ObjectHideFlags: 0
