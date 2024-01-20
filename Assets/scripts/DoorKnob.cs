@@ -1,17 +1,28 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorKnob : bloody_door
+public class DoorKnob : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private doorwithbrokenknob knob;   
+    public string numbers;
+    public Animator animator;
+    public  Animator animdoor;
     void Start()
     {
-           knob.Knobhave += Open;
+           
     }
-    
-   
+    public void Keyin()
+    {
+
+        animator.SetBool("keyin", true);
+        //animator.SetBool("keyin", false);
+    }
+    public  void Opendoor()
+    {
+        animdoor.SetBool("open", true);
+    }
     // Update is called once per frame
     void Update()
     {

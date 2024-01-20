@@ -9,6 +9,7 @@ TagManager:
   - codelock
   - flashlight
   - key1
+  - ok
   layers:
   - Default
   - TransparentFX
