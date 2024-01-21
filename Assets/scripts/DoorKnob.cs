@@ -8,6 +8,7 @@ public class DoorKnob : MonoBehaviour
     // Start is called before the first frame update
     public string numbers;
     public Animator animator;
+
    // public string colors;
     //public  Animator animdoor;
     void Start()
@@ -19,6 +20,12 @@ public class DoorKnob : MonoBehaviour
 
         animator.SetBool("keyin", true);
         //animator.SetBool("keyin", false);
+        StartCoroutine(ResetButtonAnimation());
+    }
+    private IEnumerator ResetButtonAnimation()
+    {
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+        animator.SetBool("keyin", false);
     }
     /*public  void Opendoor()
     {

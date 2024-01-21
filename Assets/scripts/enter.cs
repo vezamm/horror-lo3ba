@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Security.Cryptography;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -13,7 +14,7 @@ public class entre : MonoBehaviour
    // public int keynum;    
    // public bool keyout;
     private Camera cam;
-    public string enteredcode;
+    public string enteredcode,enteredcodecolor;
     public string expectedcode,expectedcodecolor;
     public Animator animdoor;public Animator animdoorcolor;
     public TMP_Text display;
@@ -59,7 +60,7 @@ public class entre : MonoBehaviour
                     if(doorKnob != null)
                     {
                         doorKnob.Keyin();
-                        Addnumber(doorKnob.numbers);
+                        AddnumberColor(doorKnob.numbers);
                         Checklenghtcodecolor();
                         
                     }
@@ -90,6 +91,12 @@ public class entre : MonoBehaviour
     private void Addnumber(string keynumbers)
     {
         enteredcode += keynumbers;
+        
+
+    }
+    private void AddnumberColor(string keycolor)
+    {
+        enteredcodecolor += keycolor;
     }
     public void Displaycode()
     {
@@ -101,7 +108,7 @@ public class entre : MonoBehaviour
 
     public void Checkcodecolor()
     {
-        if (enteredcode == expectedcodecolor)
+        if (enteredcodecolor == expectedcodecolor)
         {
             animdoorcolor.SetBool("open", true);
 
@@ -111,7 +118,7 @@ public class entre : MonoBehaviour
     }
     public void Checklenghtcodecolor()
     {
-        if (enteredcode.Length == expectedcodecolor.Length)
+        if (enteredcodecolor.Length == expectedcodecolor.Length)
         {
             Checkcodecolor();
         }

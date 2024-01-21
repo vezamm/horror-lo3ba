@@ -11,6 +11,7 @@ TagManager:
   - key1
   - ok
   - keycolor
+  - EXIT
   layers:
   - Default
   - TransparentFX
