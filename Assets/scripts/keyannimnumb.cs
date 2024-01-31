@@ -3,14 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorKnob : MonoBehaviour
+public class keyannimnumb : MonoBehaviour
 {
     // Start is called before the first frame update
     public string numbers;
-    public Animator animator;
-
-   // public string colors;
-    //public  Animator animdoor;
+    public Animator animator;  
     void Start()
     {
            
@@ -26,15 +23,7 @@ public class DoorKnob : MonoBehaviour
     {
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
         animator.SetBool("keyin", false);
-    }
-    /*public  void Opendoor()
-    {
-        animdoor.SetBool("open", true);
-    }
-    public void OpenDoorcolor()
-    {
-
-    }*/
+    }    
     // Update is called once per frame
     void Update()
     {

@@ -11,25 +11,19 @@ using static doorwithbrokenknob;
 public class entre : MonoBehaviour
 {
     // Start is called before the first frame update
-   // public int keynum;    
-   // public bool keyout;
+
     private Camera cam;
     public string enteredcode,enteredcodecolor;
     public string expectedcode,expectedcodecolor;
     public Animator animdoor;public Animator animdoorcolor;
-    public TMP_Text display;
+    public TMP_Text display,displayC;
 
     // Update is called once per frame
      void Start()
-    {   
+     {   
                cam= Camera.main;
-    }
-    /*public void Keyin()
-    {
-        
-        animator.SetBool("keyin", true);
-       
-    }*/
+     }
+    
     public void Update()
     {
         RaycastHit hitinfo;
@@ -41,7 +35,7 @@ public class entre : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Mouse0)) { 
 
-                    DoorKnob doorknob = hitinfo.collider.GetComponent<DoorKnob>();
+                    keyannimnumb doorknob = hitinfo.collider.GetComponent<keyannimnumb>();
                     if (doorknob != null)
                     {   
                         doorknob.Keyin();
@@ -56,15 +50,24 @@ public class entre : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
-                    DoorKnob doorKnob =hitinfo.collider.GetComponent<DoorKnob>();
+                    keyannimnumb doorKnob =hitinfo.collider.GetComponent<keyannimnumb>();
                     if(doorKnob != null)
                     {
                         doorKnob.Keyin();
                         AddnumberColor(doorKnob.numbers);
                         Checklenghtcodecolor();
-                        
+                        DisplaycodeCOLOR();
                     }
                 }
+            }
+            if (hitinfo.collider.CompareTag("reset"))
+            {
+                if (Input.GetKeyDown(KeyCode.Mouse0))
+                {
+                    Resetcode();
+                Debug.Log("eee");
+                }
+
             }
         } 
 
@@ -105,6 +108,13 @@ public class entre : MonoBehaviour
             display.text = $"{enteredcode:OOOO}";
         }
     }
+    public void DisplaycodeCOLOR()
+    {
+        if (display != null)
+        {
+            displayC.text = $"{enteredcodecolor:....}";
+        }
+    }
 
     public void Checkcodecolor()
     {
@@ -114,15 +124,21 @@ public class entre : MonoBehaviour
 
 
         }
-        else enteredcode = "";
+        else enteredcodecolor = "";
     }
+
     public void Checklenghtcodecolor()
     {
         if (enteredcodecolor.Length == expectedcodecolor.Length)
         {
             Checkcodecolor();
-        }
+        } 
 
+    }
+    public void Resetcode()
+    {
+        enteredcode = "";
+        display.text = "";
     }
 
 }

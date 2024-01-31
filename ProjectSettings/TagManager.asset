@@ -12,6 +12,11 @@ TagManager:
   - ok
   - keycolor
   - EXIT
+  - doorwithoutknob
+  - knob
+  - reset
+  - keydoor
+  - doorwithoutkey
   layers:
   - Default
   - TransparentFX

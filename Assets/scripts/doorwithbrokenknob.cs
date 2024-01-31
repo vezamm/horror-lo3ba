@@ -6,35 +6,17 @@ using UnityEngine;
 public class doorwithbrokenknob : MonoBehaviour
 {
     // Start is called before the first frame update
+    public  Animator annimdoor;
     public GameObject knob;
-    public GameObject inText;
-    public delegate void doorknob();
-    public event doorknob Knobhave;
-    public bool nob=false;
-    void Start()
+    private void Start()
     {
-        
+              
     }
-    private void OnTriggerStay(Collider other)
+    
+    public void Dooropen()
     {
-        if (other.CompareTag("Player"))
-        {
-            if (Input.GetKey(KeyCode.E))
-            {
-                inText.SetActive(true);
-                knob.SetActive(false);
-                nob = true;
-                Knobhave.Invoke();
-            }
-            
-
-            //haveknob=true;
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+            annimdoor.SetBool("open", true);
+            knob.SetActive(true);
+    
     }
 }
