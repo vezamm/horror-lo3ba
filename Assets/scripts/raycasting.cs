@@ -27,37 +27,37 @@ public class Raycasting : MonoBehaviour
         {
             if (hitinfo.collider.CompareTag("Door"))//openning the door
             {   
-                InText.SetActive(true);
+                //InText.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     //if (opened = true)
                     bloody_door door = hitinfo.collider.GetComponent<bloody_door>();
                     door.Open();                    
                 }
-                else InText.SetActive(false);
+                //else InText.SetActive(false);
             }
           
             if(hitinfo.collider.CompareTag("codelock"))//opening the canvas for the code lock   
             {
-                InText.SetActive(true);
+                //InText.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     CodeLock padlock = hitinfo.collider.GetComponent<CodeLock>();
                     padlock.Canvason();
                 }
-                 else InText.SetActive(false);
+                 //else InText.SetActive(false);
             }
            
             if (hitinfo.collider.CompareTag("flash")) //picking up the flashlight
             {   
-                InText.SetActive(true);
+                //InText.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     dhaw flashi = hitinfo.collider.GetComponent<dhaw>();
                     flashi.Flashlightofftheground();
                     
                 }
-                else InText.SetActive(false);
+                //kelse InText.SetActive(false);
             }
             
             /*if (hitinfo.collider.CompareTag("key1"))

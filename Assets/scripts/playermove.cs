@@ -66,7 +66,7 @@ public class playermove : MonoBehaviour
         // Move the controller
         characterController.Move(moveDirection * Time.deltaTime);
 
-        // Player and Camera rotation
+        // Player and Camera rotation   
         if (canMove)
         {
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
