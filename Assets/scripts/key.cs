@@ -14,13 +14,14 @@ public class key : MonoBehaviour
         // Check if the other collider has the "MainCamera" tag
         if (other.CompareTag("MainCamera"))
         {
-
             sign1.SetActive(true);
             sign2.SetActive(true);
+
             // Check if inticon is not null before accessing it
             if (inticon != null)
             {
                 inticon.SetActive(true);
+                
             }
 
             // Check for the "E" key press
@@ -33,6 +34,7 @@ public class key : MonoBehaviour
                     keye.SetActive(false);
                     keyfound=true;
                     keyf.SetActive(true);
+                   
                 }
 
                 // Check if inticon is not null before accessing it

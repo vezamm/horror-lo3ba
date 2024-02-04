@@ -5,64 +5,33 @@ using UnityEngine;
 public class bloody_door : MonoBehaviour
 {
     public Animator animator;
-    //public GameObject intText;
     public bool opened;
-    // Start is called before the first frame update
+    public AudioSource open;
+
     void Start()
     {
-       // animator = GetComponent<Animator>(); 
         opened = animator.GetBool("open");
-        animator.GetComponent<Animation>();
-    }
-    private void FixedUpdate() 
-    {
-        opened = animator.GetBool("open");
+        open = GetComponent<AudioSource>(); // Assuming AudioSource is attached to the same GameObject
     }
 
-    // Update is called once per frame
-   /* private void OnTriggerStay(Collider other)
+    private void FixedUpdate()
     {
-        if (other.CompareTag("Player"))
-        {  
-            intText.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                if (opened == false)
-                {
-                    Open();
-                }
-                else Close();
-                
-            }
-        }
-    }*/
+        opened = animator.GetBool("open");
+    }
 
     public void Open()
     {
-        if (opened == false)
+        if (!opened)
         {
             animator.SetBool("open", true);
-            Debug.Log("raycasttodhreb");
-            //opened = false;
+            if (open != null && !open.isPlaying) // Check if AudioSource is not null and not already playing
+            {
+                open.Play();
+            }
         }
-        if (opened==true)
+        else
         {
-            Debug.Log("kada tekhdem");
             animator.SetBool("open", false);
-           //opened = true;
         }
     }
-    /*public void Close()
-    {
-        animator.SetBool("open", false);
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            intText.SetActive(false);
-        }
-    }*/
-
 }
-

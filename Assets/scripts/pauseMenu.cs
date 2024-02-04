@@ -22,7 +22,7 @@ public class pauseMenu : MonoBehaviour
     {
         pausemenu?.SetActive(false);
         Time.timeScale = 1.0f;
-        Cursor.lockState = CursorLockMode.Locked;
+        
     }
     public void replay()
     {

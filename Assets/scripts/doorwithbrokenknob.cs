@@ -8,6 +8,7 @@ public class doorwithbrokenknob : MonoBehaviour
     // Start is called before the first frame update
     public  Animator annimdoor;
     public GameObject knob;
+    public AudioSource open;
     private void Start()
     {
               
@@ -17,6 +18,7 @@ public class doorwithbrokenknob : MonoBehaviour
     {
             annimdoor.SetBool("open", true);
             knob.SetActive(true);
+        open.Play();
     
     }
 }
