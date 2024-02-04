@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class menuscript : MonoBehaviour
 {
-
+   
     
     // Update is called once per frame
     void Update()
@@ -17,6 +17,7 @@ public class menuscript : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Escape))
         {
+            
             Application.Quit();
         }
     }

@@ -12,6 +12,7 @@ public class CodeLock : MonoBehaviour
     [SerializeField] UnityEvent passwordwrong;
     [SerializeField] UnityEvent ontrigger;
     private string Currentpassword;
+   // [SerializeField] playermove playermovescript;
    // public GameObject text;
     public GameObject canvas;
 

@@ -7,6 +7,8 @@ public class UIscript : MonoBehaviour
 {
     [SerializeField] GameObject pausemenu;
     [SerializeField] GameObject pauseButton;
+    [SerializeField] playermove playermovescript;
+    [SerializeField] GameObject Inventory;
     public void pause()
     {
         pausemenu.SetActive(true);
@@ -23,10 +25,20 @@ public class UIscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
+            playermovescript.Togglecamrot(false);
             pause();
             Cursor.lockState = CursorLockMode.None;
+        }
+        if (Input.GetKey(KeyCode.Tab))
+            Inventoryonoroff();
+    }
+    private void Inventoryonoroff()
+    {
+        if (Inventory != null)
+        {
+            Inventory.SetActive(!Inventory.activeSelf);
         }
     }
 

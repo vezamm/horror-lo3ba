@@ -6,12 +6,13 @@ using UnityEngine.Rendering.UI;
 public class Raycasting : MonoBehaviour
 {
     private Camera camera;
-    public GameObject InText;
+   // public GameObject InText;
     public GameObject knob;
     public bool havedoorknob=false;
     public GameObject text;
     public bool havekey=false;
     public GameObject key;
+    [SerializeField] playermove playermovescript;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,8 +42,10 @@ public class Raycasting : MonoBehaviour
             {
                 //InText.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
-                {
+                {   
+                    playermovescript.Togglecamrot(false);
                     CodeLock padlock = hitinfo.collider.GetComponent<CodeLock>();
+                    
                     padlock.Canvason();
                 }
                  //else InText.SetActive(false);

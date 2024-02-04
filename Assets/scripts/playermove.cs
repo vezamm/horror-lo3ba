@@ -16,6 +16,7 @@ public class playermove : MonoBehaviour
     public float lookSpeed = 2.0f;
     public float lookXLimit = 45.0f;
     public GameObject flashlight;
+    public bool allowcamerarotation=true;
     
 
     CharacterController characterController;
@@ -67,7 +68,7 @@ public class playermove : MonoBehaviour
         characterController.Move(moveDirection * Time.deltaTime);
 
         // Player and Camera rotation   
-        if (canMove)
+        if (canMove&&allowcamerarotation==true)
         {
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
@@ -88,5 +89,9 @@ public class playermove : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+    }
+    public void Togglecamrot(bool enablecamera)
+    {
+        allowcamerarotation = enablecamera;
     }
 }

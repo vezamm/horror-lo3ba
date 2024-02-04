@@ -8,12 +8,18 @@ public class flashlightrotation : MonoBehaviour
     public float lookXLimit = 50.0f;
     float rotationX = 0;
     public GameObject flashlight;
+    [SerializeField] private playermove playermovescript;
     // Update is called once per frame
     void Update()
     {
-        rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
-        rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-        flashlight.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-        transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+        if (playermovescript.allowcamerarotation == true)
+        {  
+            rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
+            rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
+            flashlight.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+            transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);     
+        
+        }
+
     }
 }
