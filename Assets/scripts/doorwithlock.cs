@@ -16,7 +16,7 @@ public class Doorwithlock : MonoBehaviour
         animator.SetBool("open", true);
         open.Play();
     }
-    public void Cursorlokc()
+    public void Cursorlock()
     {
         Cursor.lockState = CursorLockMode.Locked;
     }

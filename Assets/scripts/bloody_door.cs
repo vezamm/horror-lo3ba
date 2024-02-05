@@ -11,7 +11,7 @@ public class bloody_door : MonoBehaviour
     void Start()
     {
         opened = animator.GetBool("open");
-        open = GetComponent<AudioSource>(); // Assuming AudioSource is attached to the same GameObject
+
     }
 
     private void FixedUpdate()
@@ -24,7 +24,7 @@ public class bloody_door : MonoBehaviour
         if (!opened)
         {
             animator.SetBool("open", true);
-            if (open != null && !open.isPlaying) // Check if AudioSource is not null and not already playing
+            if (open != null && !open.isPlaying)
             {
                 open.Play();
             }

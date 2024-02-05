@@ -85,8 +85,7 @@ public class entre : MonoBehaviour
           if (enteredcode == expectedcode)
           {
              animdoor.SetBool("open", true);
-
-                    
+             display.text = expectedcode;
           }
           else  enteredcode = "";                             
     }
@@ -110,7 +109,7 @@ public class entre : MonoBehaviour
     }
     public void DisplaycodeCOLOR()
     {
-        if (display != null)
+        if (displayC != null)
         {
             displayC.text = $"{enteredcodecolor:....}";
         }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    public GameObject door_closed, door_opened, intText, lockedtext,keyf;
+    public GameObject door_closed, door_opened, intText, lockedtext, keyf;
     public AudioSource open, close;
     public bool opened, locked;
     public bool keymawjouda;
