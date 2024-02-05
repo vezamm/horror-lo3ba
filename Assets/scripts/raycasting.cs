@@ -9,10 +9,11 @@ public class Raycasting : MonoBehaviour
    // public GameObject InText;
     public GameObject knob;
     public bool havedoorknob=false;
-    public GameObject text;
+    public GameObject needsknobtext,needskeytext,pressEtext;
     public bool havekey=false;
     public GameObject key;
     [SerializeField] playermove playermovescript;
+        
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +26,9 @@ public class Raycasting : MonoBehaviour
         RaycastHit hitinfo;
         var ray = camera.ScreenPointToRay(Input.mousePosition) ;
         if (Physics.Raycast(ray,out hitinfo, 5))
-        {
+        { 
             if (hitinfo.collider.CompareTag("Door"))//openning the door
-            {   
+            {   pressEtext.SetActive(true);
                 //InText.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -36,7 +37,7 @@ public class Raycasting : MonoBehaviour
                     door.Open();                    
                 }
                 //else InText.SetActive(false);
-            }
+            }else pressEtext.SetActive(false);
           
             if(hitinfo.collider.CompareTag("codelock"))//opening the canvas for the code lock   
             {
@@ -89,14 +90,14 @@ public class Raycasting : MonoBehaviour
                 doorwithbrokenknob knob = hitinfo.collider.GetComponentInChildren<doorwithbrokenknob>();
                 if (havedoorknob == false)
                 {
-                    text.SetActive(true);
+                    needsknobtext.SetActive(true);
                 }
                 if (Input.GetKeyDown(KeyCode.E) && havedoorknob == true)
                 {
                     knob.Dooropen();
                 }
             }
-            else text.SetActive(false);
+            else needsknobtext.SetActive(false);
             if (hitinfo.collider.CompareTag("keydoor"))
             {   
                 if (Input.GetKeyDown(KeyCode.E))
@@ -108,14 +109,14 @@ public class Raycasting : MonoBehaviour
             if (hitinfo.collider.CompareTag("doorwithoutkey"))
             {
                 doorwithbrokenknob knob = hitinfo.collider.GetComponentInChildren<doorwithbrokenknob>();
-                if(havekey==false)text.SetActive(true);
+                if(havekey==false)needskeytext.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E) && havekey == true)
                 {
                     knob.Dooropen();
                 }
-                else text.SetActive(false);
                 
-            }
+                
+            }else needskeytext.SetActive(false);
 
 
         }

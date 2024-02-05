@@ -17,6 +17,7 @@ public class entre : MonoBehaviour
     public string expectedcode,expectedcodecolor;
     public Animator animdoor;public Animator animdoorcolor;
     public TMP_Text display,displayC;
+    public GameObject pressleftclicktext, pressleftclicktoresettext;
 
     // Update is called once per frame
      void Start()
@@ -33,11 +34,13 @@ public class entre : MonoBehaviour
         {
             if (hitinfo.collider.CompareTag("key1"))
             {
-                if (Input.GetKeyDown(KeyCode.Mouse0)) { 
+                pressleftclicktext.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.Mouse0))
+                {
 
                     keyannimnumb doorknob = hitinfo.collider.GetComponent<keyannimnumb>();
                     if (doorknob != null)
-                    {   
+                    {
                         doorknob.Keyin();
                         //enteredcode += doorknob.numbers;
                         Addnumber(doorknob.numbers);
@@ -46,8 +49,9 @@ public class entre : MonoBehaviour
                     }
                 }
             }
+            else pressleftclicktext.SetActive(false);
             if (hitinfo.collider.CompareTag("keycolor"))
-            {
+            { //pressleftclicktext.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
                     keyannimnumb doorKnob =hitinfo.collider.GetComponent<keyannimnumb>();
@@ -59,16 +63,16 @@ public class entre : MonoBehaviour
                         DisplaycodeCOLOR();
                     }
                 }
-            }
+            }else //pressleftclicktext.SetActive(false);
             if (hitinfo.collider.CompareTag("reset"))
-            {
+            { pressleftclicktoresettext.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
                     Resetcode();
                 Debug.Log("eee");
                 }
 
-            }
+            }else pressleftclicktoresettext.SetActive(false);
         } 
 
     }
