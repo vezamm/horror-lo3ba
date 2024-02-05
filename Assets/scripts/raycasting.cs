@@ -28,19 +28,20 @@ public class Raycasting : MonoBehaviour
         if (Physics.Raycast(ray,out hitinfo, 5))
         { 
             if (hitinfo.collider.CompareTag("Door"))//openning the door
-            {   pressEtext.SetActive(true);
-                //InText.SetActive(true);
+            {   
+                pressEtext.SetActive(true);                
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     //if (opened = true)
                     bloody_door door = hitinfo.collider.GetComponent<bloody_door>();
                     door.Open();                    
-                }
-                //else InText.SetActive(false);
-            }else pressEtext.SetActive(false);
+                }               
+            }
+            else pressEtext.SetActive(false);
           
             if(hitinfo.collider.CompareTag("codelock"))//opening the canvas for the code lock   
-            {
+            { 
+                pressEtext.SetActive(true);
                 //InText.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
                 {   
@@ -49,8 +50,10 @@ public class Raycasting : MonoBehaviour
                     
                     padlock.Canvason();
                 }
-                 //else InText.SetActive(false);
+
             }
+            else pressEtext.SetActive(false);
+
            
             if (hitinfo.collider.CompareTag("flash")) //picking up the flashlight
             {   
@@ -61,7 +64,7 @@ public class Raycasting : MonoBehaviour
                     flashi.Flashlightofftheground();
                     
                 }
-                //kelse InText.SetActive(false);
+                
             }
             
             /*if (hitinfo.collider.CompareTag("key1"))
@@ -99,13 +102,14 @@ public class Raycasting : MonoBehaviour
             }
             else needsknobtext.SetActive(false);
             if (hitinfo.collider.CompareTag("keydoor"))
-            {   
+            {
+                pressEtext.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     Key();
                     Destroy(hitinfo.collider.gameObject);
                 }              
-            }
+            }else pressEtext.SetActive(false);
             if (hitinfo.collider.CompareTag("doorwithoutkey"))
             {
                 doorwithbrokenknob knob = hitinfo.collider.GetComponentInChildren<doorwithbrokenknob>();

@@ -87,7 +87,7 @@ public class playermove : MonoBehaviour
     {
         if (other.CompareTag("EXIT"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
         }
     }
     public void Togglecamrot(bool enablecamera)
