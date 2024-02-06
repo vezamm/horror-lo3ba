@@ -48,7 +48,8 @@ public class entre : MonoBehaviour
                         Checklenghtcode();
                     }
                 }
-            }else pressleftclicktext.SetActive(false);
+            }
+            else pressleftclicktext.SetActive(false);
             if (hitinfo.collider.CompareTag("keycolor"))
             { //pressleftclicktext.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.Mouse0))
