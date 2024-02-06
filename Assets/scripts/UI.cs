@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class UIscript : MonoBehaviour
 {
+    public GameObject codemenu;  
     [SerializeField] GameObject pausemenu;
     [SerializeField] GameObject pauseButton;
     [SerializeField] playermove playermovescript;
@@ -30,6 +31,7 @@ public class UIscript : MonoBehaviour
             playermovescript.Togglecamrot(false);
             pause();
             Cursor.lockState = CursorLockMode.None;
+            codemenu.SetActive(false);
         }
         if (Input.GetKey(KeyCode.Tab))
             Inventoryonoroff();

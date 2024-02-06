@@ -36,8 +36,7 @@ public class Raycasting : MonoBehaviour
                     bloody_door door = hitinfo.collider.GetComponent<bloody_door>();
                     door.Open();                    
                 }               
-            }
-            else pressEtext.SetActive(false);
+            }else pressEtext.SetActive(false);
           
             if(hitinfo.collider.CompareTag("codelock"))//opening the canvas for the code lock   
             { 
@@ -52,7 +51,6 @@ public class Raycasting : MonoBehaviour
                 }
 
             }
-            else pressEtext.SetActive(false);
 
            
             if (hitinfo.collider.CompareTag("flash")) //picking up the flashlight
@@ -99,8 +97,7 @@ public class Raycasting : MonoBehaviour
                 {
                     knob.Dooropen();
                 }
-            }
-            else needsknobtext.SetActive(false);
+            }else needsknobtext.SetActive(false);
             if (hitinfo.collider.CompareTag("keydoor"))
             {
                 pressEtext.SetActive(true);
@@ -109,7 +106,7 @@ public class Raycasting : MonoBehaviour
                     Key();
                     Destroy(hitinfo.collider.gameObject);
                 }              
-            }else pressEtext.SetActive(false);
+            }//else pressEtext.SetActive(false);
             if (hitinfo.collider.CompareTag("doorwithoutkey"))
             {
                 doorwithbrokenknob knob = hitinfo.collider.GetComponentInChildren<doorwithbrokenknob>();
