@@ -17,7 +17,8 @@ TagManager:
   - reset
   - keydoor
   - doorwithoutkey
-  - key2
+  - safedoorwithoutkey
+  - keydoorsafeside
   layers:
   - Default
   - TransparentFX

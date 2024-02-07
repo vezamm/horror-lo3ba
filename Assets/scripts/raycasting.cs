@@ -13,6 +13,8 @@ public class Raycasting : MonoBehaviour
     public bool havekey=false;
     public GameObject key;
     [SerializeField] playermove playermovescript;
+    public key keysscript;
+    public bloody_door bloody_Doorscript;
         
     // Start is called before the first frame update
     void Start()
@@ -105,7 +107,7 @@ public class Raycasting : MonoBehaviour
                 {
                     Key();
                     Destroy(hitinfo.collider.gameObject);
-                }              
+                }
             }//else pressEtext.SetActive(false);
             if (hitinfo.collider.CompareTag("doorwithoutkey"))
             {
@@ -114,12 +116,31 @@ public class Raycasting : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E) && havekey == true)
                 {
                     knob.Dooropen();
-                }
-                
-                
+                }                               
             }else needskeytext.SetActive(false);
-
-
+          
+            if(hitinfo.collider.CompareTag("keydoorsafeside"))
+            { 
+               pressEtext.SetActive(true);
+                if(Input.GetKeyDown(KeyCode.E))
+                {
+                    keysscript.Keyfound();
+                }
+            }
+           
+            if (hitinfo.collider.CompareTag("safedoorwithoutkey"))
+            {
+                if (keysscript.keytaken == false) needskeytext.SetActive(true);
+                else
+                {
+                    pressEtext.SetActive(true);
+                    if (Input.GetKeyDown(KeyCode.E) && keysscript.keytaken == true)
+                    {
+                        bloody_Doorscript.Open();
+                    }
+                }
+            }
+            
         }
     }
     public void Key()

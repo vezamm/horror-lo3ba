@@ -16,11 +16,19 @@ public class CodeLock : MonoBehaviour
    // public GameObject text;
     public GameObject canvas;
 
+    public void Erasetext()
+    {
+        int i = 0;
 
+        i++;
+        if(i<1)
+            Currentpassword = string.Empty;
+
+    } 
     public void EnterpasswordText(string Text)
-    {      
+    {       
             if (Currentpassword.Length < expectedpasswords.Length)
-            {
+            {                
                 Currentpassword += Text;
                 oncurrentpasswordchange?.Invoke(Currentpassword);
                 CheckPassword();
@@ -42,16 +50,10 @@ public class CodeLock : MonoBehaviour
            // text.SetActive(false);
         }
         else if (Currentpassword.Length == expectedpasswords.Length)
-        {                       
-            for (int i = 0; i < 4; i++) 
-            {
-                ResetPassword();
-                if (i == 3)
-                {                 
-                      passwordwrong?.Invoke();
-                }
-            }
-            
+        {
+
+            ResetPassword();           
+            passwordwrong?.Invoke();       
         }
     }  
     public void Canvason()
