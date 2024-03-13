@@ -64,11 +64,11 @@ public class Door : MonoBehaviour
         {
             locked = false;
         }
-        bool a = GetComponent<key>();
-        if (a != null)
-        {
-          //s  a = keyfound;
-        }
+        //bool a = GetComponent<key>();
+        //if (a != null)
+        //{
+        //  //s  a = keyfound;
+        //}
         
     }
 

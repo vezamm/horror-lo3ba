@@ -5,7 +5,7 @@ using UnityEngine.Rendering.UI;
 
 public class Raycasting : MonoBehaviour
 {
-    private Camera camera;
+    private Camera Camea;
    // public GameObject InText;
     public GameObject knob;
     public bool havedoorknob=false;
@@ -19,14 +19,14 @@ public class Raycasting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        camera= Camera.main;
+        Camea= Camera.main;
     }
 
     // Update is called once per frame
     void Update()
     {
         RaycastHit hitinfo;
-        var ray = camera.ScreenPointToRay(Input.mousePosition) ;
+        var ray = Camea.ScreenPointToRay(Input.mousePosition) ;
         if (Physics.Raycast(ray,out hitinfo, 5))
         { 
             if (hitinfo.collider.CompareTag("Door"))//openning the door
@@ -82,9 +82,11 @@ public class Raycasting : MonoBehaviour
             {   
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    pressEtext.SetActive(true);
 
                      Keyknob();
-                     Destroy(hitinfo.collider.gameObject);
+                     //Destroy(hitinfo.collider.gameObject);
+
                 }
             }
 
